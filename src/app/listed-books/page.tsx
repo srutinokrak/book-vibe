@@ -1,5 +1,5 @@
 "use client";
-import BookCard from "@/components/shared/BookCard";
+
 import ListedBookCard from "@/components/shared/ListedBookCard";
 import { BooksContext } from "@/context/BooksContext";
 import { IBook } from "@/types/books.typs";
@@ -10,7 +10,7 @@ const ListedBooks = () => {
   const { readBooks, wishlist } = useContext(BooksContext);
   const [sortBy, setSortBy] = useState<"rating"|"pages"|"year">("rating");
   
-  console.log(readBooks, wishlist, "readBooks, wishlist");
+  // console.log(readBooks, wishlist, "readBooks, wishlist");
   // console.log(sortBy,"sortBy");
 
 const sortBooks = (books: IBook[]) => {
@@ -23,7 +23,7 @@ const sortBooks = (books: IBook[]) => {
     } else if (sortBy === "year") {
       sortedBooks.sort((a, b) => b.yearOfPublishing- a.yearOfPublishing);
     }
-
+   return sortedBooks;
 }
 
  const sortedReadBooks = sortBooks(readBooks);
@@ -60,8 +60,8 @@ const sortBooks = (books: IBook[]) => {
           aria-label={`Read Books (${readBooks.length})`}
         />
         <div className="tab-content border-base-300 bg-base-100 p-10 space-y-[25px]">
-          {readBooks.length > 0 ? (
-            readBooks.map((book: IBook) => {
+          {sortedReadBooks.length > 0 ? (
+            sortedReadBooks.map((book: IBook) => {
               return <ListedBookCard key={book.bookId} book={book} />;
             })
           ) : (
@@ -79,8 +79,8 @@ const sortBooks = (books: IBook[]) => {
           defaultChecked
         />
         <div className="tab-content border-base-300 bg-base-100 p-10">
-          {wishlist.length > 0 ? (
-            wishlist.map((book: IBook) => {
+          {sortedWishlist.length > 0 ? (
+            sortedWishlist.map((book: IBook) => {
               return <ListedBookCard key={book.bookId} book={book} />;
             })
           ) : (
