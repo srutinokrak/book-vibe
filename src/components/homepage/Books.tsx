@@ -1,6 +1,5 @@
 
-import Image from 'next/image';
-import React from 'react';
+
 import BookCard from '../shared/BookCard';
 import { IBook } from '@/types/books.typs';
 

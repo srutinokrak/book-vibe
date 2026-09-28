@@ -3,7 +3,7 @@
 import ListedBookCard from "@/components/shared/ListedBookCard";
 import { BooksContext } from "@/context/BooksContext";
 import { IBook } from "@/types/books.typs";
-import Image from "next/image";
+
 import React, { useContext, useState } from "react";
 
 const ListedBooks = () => {
