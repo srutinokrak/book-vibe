@@ -18,6 +18,23 @@ Book Vibe is a book discovery and reading-list app built with Next.js. Browse a 
 - Recharts for the read-books chart
 - React Toastify for action notifications
 
+## Dependencies
+
+### Runtime Dependencies
+
+- `next` 16.3.5
+- `react` and `react-dom` 19.2.8
+- `daisyui` `^5.7.42`
+- `react-toastify` `^11.1.0`
+- `recharts` `^3.10.1`
+
+### Development Dependencies
+
+- `typescript` `^5`
+- `tailwindcss` `^4.3.3` and `@tailwindcss/postcss` `^4.3.3`
+- `eslint` `^9` and `eslint-config-next` `16.3.5`
+- `@types/node` `^20`, `@types/react` `^19`, and `@types/react-dom` `^19`
+
 ## Getting Started
 
 ### Requirements
